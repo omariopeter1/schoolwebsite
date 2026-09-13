@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ntungamo High School | Excellence • Faith • Future</title>
+
+<style>
+
+/* =========================================================
+   NTUNGAMO HIGH SCHOOL - MODERN WEBSITE
+   ========================================================= */
+
+:root{
+    --green:#0b8f55;
+    --green2:#16c172;
+    --dark:#061b14;
+    --dark2:#09251b;
+    --white:#ffffff;
+    --muted:#b9d4c8;
+    --glass:rgba(255,255,255,.08);
+    --border:rgba(255,255,255,.14);
+    --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-padding-top:90px;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(22,193,114,.18),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(0,255,150,.10),transparent 30%),
+        linear-gradient(135deg,#03110c,#061d14,#02100b);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   SCROLL BAR
+   ========================================================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#03110c;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(var(--green),var(--green2));
+    border-radius:20px;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(3,17,12,.75);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-area img{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid var(--green2);
+    box-shadow:0 0 20px rgba(22,193,114,.5);
+}
+
+.logo-text{
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.logo-text span{
+    display:block;
+    font-size:10px;
+    color:var(--green2);
+    letter-spacing:3px;
+    margin-top:3px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#eafff5;
+    text-decoration:none;
+    padding:10px 13px;
+    border-radius:10px;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    background:rgba(22,193,114,.14);
+    color:#63f5ad;
+    transform:translateY(-2px);
+}
+
+.contact-btn{
+    background:linear-gradient(135deg,var(--green),var(--green2));
+    color:white!important;
+    box-shadow:0 8px 25px rgba(22,193,114,.25);
+}
+
+.menu-btn{
+    display:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    padding:130px 7% 80px;
+    overflow:hidden;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,rgba(2,16,11,.96),rgba(2,16,11,.70),rgba(2,16,11,.40)),
+        url("images/bck.jpg") center/cover;
+    z-index:-2;
+    transform:scale(1.05);
+}
+
+.hero-bg::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,transparent 50%,#03110c 100%);
+}
+
+.hero-content{
+    max-width:800px;
+    animation:heroIn 1.2s ease;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 15px;
+    border:1px solid rgba(22,193,114,.4);
+    background:rgba(22,193,114,.08);
+    border-radius:30px;
+    color:#75ffbb;
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+
+.badge::before{
+    content:"";
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#48f79f;
+    box-shadow:0 0 12px #48f79f;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,90px);
+    line-height:.95;
+    letter-spacing:-4px;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--green2);
+    text-shadow:0 0 30px rgba(22,193,114,.35);
+}
+
+.hero p{
+    max-width:680px;
+    color:#c4d9d0;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,#079c59,#22d27d);
+    color:white;
+    box-shadow:0 12px 30px rgba(22,193,114,.25);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(22,193,114,.35);
+}
+
+.btn-outline{
+    color:white;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(10px);
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,.12);
+    transform:translateY(-4px);
+}
+
+.hero-orb{
+    position:absolute;
+    width:400px;
+    height:400px;
+    right:-100px;
+    top:25%;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(22,193,114,.25),transparent 65%);
+    animation:float 5s ease-in-out infinite;
+}
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+section{
+    padding:100px 7%;
+    position:relative;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 55px;
+}
+
+.section-heading .mini{
+    color:#52efa2;
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:4px;
+    font-weight:bold;
+}
+
+.section-heading h2{
+    font-size:clamp(30px,5vw,52px);
+    margin:12px 0;
+}
+
+.section-heading p{
+    color:#a9c5b8;
+    line-height:1.8;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats{
+    margin-top:-40px;
+    position:relative;
+    z-index:5;
+    padding:0 7%;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat{
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--border);
+    backdrop-filter:blur(18px);
+    padding:28px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    transition:.35s;
+}
+
+.stat:hover{
+    transform:translateY(-8px);
+    border-color:rgba(22,193,114,.4);
+}
+
+.stat-number{
+    font-size:35px;
+    font-weight:bold;
+    color:#54f2a5;
+}
+
+.stat p{
+    color:#a9c5b8;
+    font-size:13px;
+    margin-top:7px;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+}
+
+.about-image img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    border-radius:28px;
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:var(--shadow);
+}
+
+.about-image::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:1px solid var(--green2);
+    border-radius:28px;
+    transform:rotate(-4deg);
+    opacity:.35;
+    z-index:-1;
+}
+
+.about-content h2{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.about-content h2 span{
+    color:var(--green2);
+}
+
+.about-content p{
+    color:#b8cec3;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.info-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:25px;
+}
+
+.info-card{
+    padding:20px;
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--border);
+    border-radius:15px;
+}
+
+.info-card strong{
+    color:#5cf4a8;
+    display:block;
+    margin-bottom:6px;
+}
+
+.info-card span{
+    color:#aac4b8;
+    font-size:12px;
+}
+
+/* =========================================================
+   ACADEMICS
+   ========================================================= */
+
+.academic-section{
+    background:
+        linear-gradient(rgba(3,20,13,.85),rgba(3,20,13,.95)),
+        url("images/bck.jpg") center/cover fixed;
+}
+
+.performance-grid{
+    display:grid;
+    grid-template-columns:1.4fr .8fr;
+    gap:25px;
+}
+
+.panel{
+    background:rgba(255,255,255,.065);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:28px;
+    backdrop-filter:blur(18px);
+    box-shadow:var(--shadow);
+}
+
+.panel-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.panel-title h3{
+    font-size:20px;
+}
+
+.panel-title span{
+    color:#54f2a5;
+    font-size:12px;
+}
+
+.performance-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.performance-table th{
+    text-align:left;
+    color:#65f5ad;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    padding:13px;
+    border-bottom:1px solid var(--border);
+}
+
+.performance-table td{
+    padding:15px 13px;
+    color:#d4e7df;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    font-size:13px;
+}
+
+.performance-table tr{
+    transition:.25s;
+}
+
+.performance-table tbody tr:hover{
+    background:rgba(22,193,114,.08);
+}
+
+.score{
+    font-weight:bold;
+    color:#5df5aa;
+}
+
+.subject-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.subject{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.subject-name{
+    color:#d8e9e2;
+    font-size:14px;
+}
+
+.progress{
+    width:55%;
+    height:7px;
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    background:linear-gradient(90deg,#0b9255,#52f2a4);
+    border-radius:20px;
+}
+
+/* =========================================================
+   STUDENT LIFE
+   ========================================================= */
+
+.life-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.life-card{
+    position:relative;
+    padding:30px;
+    border-radius:22px;
+    background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+    border:1px solid var(--border);
+    overflow:hidden;
+    transition:.4s;
+}
+
+.life-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(22,193,114,.45);
+}
+
+.life-icon{
+    font-size:35px;
+    margin-bottom:18px;
+}
+
+.life-card h3{
+    margin-bottom:10px;
+}
+
+.life-card p{
+    color:#a9c5b8;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================================================
+   TIMETABLE
+   ========================================================= */
+
+.schedule-wrap{
+    overflow-x:auto;
+    border-radius:22px;
+    border:1px solid var(--border);
+}
+
+.schedule{
+    width:100%;
+    min-width:700px;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.045);
+}
+
+.schedule th{
+    background:rgba(22,193,114,.16);
+    color:#69f4ae;
+    padding:18px;
+    text-align:left;
+}
+
+.schedule td{
+    padding:17px;
+    border-top:1px solid rgba(255,255,255,.07);
+    color:#c5d9d1;
+}
+
+.schedule tr:hover td{
+    background:rgba(22,193,114,.06);
+}
+
+/* =========================================================
+   UPDATES
+   ========================================================= */
+
+.updates{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.update-card{
+    padding:28px;
+    border-radius:20px;
+    background:rgba(255,255,255,.055);
+    border:1px solid var(--border);
+    transition:.3s;
+}
+
+.update-card:hover{
+    transform:translateY(-7px);
+}
+
+.update-date{
+    color:#58efa4;
+    font-size:11px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.update-card h3{
+    margin-bottom:12px;
+}
+
+.update-card p{
+    color:#aac4b8;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================================================
+   CLUBS
+   ========================================================= */
+
+.clubs{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.club{
+    overflow:hidden;
+    background:rgba(255,255,255,.055);
+    border:1px solid var(--border);
+    border-radius:24px;
+    transition:.4s;
+}
+
+.club:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 60px rgba(0,0,0,.4);
+}
+
+.club img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.club-body{
+    padding:25px;
+}
+
+.club-body h3{
+    color:#65f5ad;
+    margin-bottom:12px;
+}
+
+.club-body p{
+    color:#abc5ba;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================================================
+   MISSION
+   ========================================================= */
+
+.mission{
+    text-align:center;
+    background:
+        radial-gradient(circle at center,rgba(22,193,114,.18),transparent 55%),
+        #04170f;
+}
+
+.quote{
+    max-width:900px;
+    margin:auto;
+    font-size:clamp(25px,4vw,43px);
+    line-height:1.35;
+    font-weight:bold;
+}
+
+.quote span{
+    color:#54f2a5;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    padding:60px 7% 25px;
+    background:#020c08;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:40px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:#8eaaa0;
+    line-height:1.8;
+    font-size:14px;
+    text-decoration:none;
+}
+
+footer a{
+    display:block;
+    margin:6px 0;
+}
+
+footer a:hover{
+    color:#55f2a5;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:22px;
+    text-align:center;
+    color:#668078;
+    font-size:12px;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(10px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+    padding:20px;
+}
+
+.modal-box{
+    width:100%;
+    max-width:500px;
+    background:#092219;
+    border:1px solid rgba(22,193,114,.3);
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 30px 100px rgba(0,0,0,.6);
+    animation:modalIn .35s ease;
+}
+
+.modal-box h2{
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    color:#a9c5b8;
+    margin-bottom:25px;
+}
+
+.close{
+    float:right;
+    font-size:25px;
+    cursor:pointer;
+    color:#9db6ac;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:10px;
+    background:rgba(255,255,255,.06);
+    color:white;
+    outline:none;
+}
+
+.form-group textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+.top-btn{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:linear-gradient(135deg,#079c59,#22d27d);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    z-index:500;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    display:none;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-25px);}
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        position:absolute;
+        top:79px;
+        left:0;
+        width:100%;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        background:rgba(3,17,12,.97);
+        padding:15px;
+        border-bottom:1px solid rgba(255,255,255,.1);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        display:block;
+        text-align:center;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid,
+    .performance-grid{
+        grid-template-columns:1fr;
+    }
+
+    .life-grid,
+    .clubs,
+    .updates{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:75px 5%;
+    }
+
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .stats{
+        padding:0 5%;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat{
+        padding:20px 10px;
+    }
+
+    .stat-number{
+        font-size:27px;
+    }
+
+    .about-image img{
+        height:300px;
+    }
+
+    .info-cards{
+        grid-template-columns:1fr;
+    }
+
+    .life-grid,
+    .clubs,
+    .updates,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .panel{
+        padding:18px;
+    }
+
+    .hero-orb{
+        width:250px;
+        height:250px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo-area">
+        <img src="images/logo.jpeg" alt="Ntungamo High School Logo">
+
+        <div class="logo-text">
+            NTUNGAMO HIGH
+            <span>EXCELLENCE • FAITH • FUTURE</span>
+        </div>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#life">Student Life</a></li>
+        <li><a href="#updates">Updates</a></li>
+        <li><a href="#clubs">Clubs</a></li>
+        <li><a href="#" class="contact-btn" onclick="openModal()">Contact Us</a></li>
+    </ul>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+</nav>
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<header class="hero" id="home">
+
+    <div class="hero-bg"></div>
+    <div class="hero-orb"></div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            WELCOME TO NTUNGAMO HIGH SCHOOL
+        </div>
+
+        <h1>
+            Building<br>
+            <span>Tomorrow's Leaders.</span>
+        </h1>
+
+        <p>
+            A community dedicated to academic excellence, character,
+            faith, creativity and the development of every student
+            into a confident citizen ready to shape the future.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#about" class="btn btn-primary">
+                Explore Our School →
+            </a>
+
+            <a href="#academics" class="btn btn-outline">
+                View Academics
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ======================================================
+     STATISTICS
+====================================================== -->
+
+<div class="stats">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+            <div class="stat-number">1995</div>
+            <p>Established</p>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">10+</div>
+            <p>School Clubs</p>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">100%</div>
+            <p>Student Potential</p>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">∞</div>
+            <p>Possibilities</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     ABOUT
+====================================================== -->
+
+<section id="about">
+
+    <div class="about-grid reveal">
+
+        <div class="about-image">
+
+            <img src="images/bck.jpg" alt="Ntungamo High School">
+
+        </div>
+
+        <div class="about-content">
+
+            <div class="section-heading" style="text-align:left;margin:0 0 20px 0">
+
+                <div class="mini">Our Story</div>
+
+                <h2>
+                    More Than A <span>School.</span>
+                </h2>
+
+            </div>
+
+            <p>
+                Ntungamo High School has been serving students since
+                1995. The school was started by the loving
+                Rev. Fr. Bashoobora, whose vision helped create
+                opportunities for many young people to pursue education.
+            </p>
+
+            <p>
+                Our school believes that every student deserves an
+                opportunity to discover their potential. Whether rich
+                or poor, naturally gifted or still discovering their
+                abilities, every learner is part of our community.
+            </p>
+
+            <div class="info-cards">
+
+                <div class="info-card">
+                    <strong>01</strong>
+                    <span>Academic Excellence</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>02</strong>
+                    <span>Character Building</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>03</strong>
+                    <span>Faith & Community</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     ACADEMICS
+====================================================== -->
+
+<section id="academics" class="academic-section">
+
+    <div class="section-heading reveal">
+
+        <div class="mini">Academic Excellence</div>
+
+        <h2>Where Curiosity Meets Results.</h2>
+
+        <p>
+            Our students are encouraged to learn together,
+            exchange ideas, solve problems and develop the
+            skills required for the world beyond school.
+        </p>
+
+    </div>
+
+
+    <div class="performance-grid reveal">
+
+        <div class="panel">
+
+            <div class="panel-title">
+
+                <h3>2024 Student Performance</h3>
+
+                <span>UACE</span>
+
+            </div>
+
+            <div style="overflow-x:auto">
+
+                <table class="performance-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Student</th>
+                            <th>Combination</th>
+                            <th>Points</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>U001</td>
+                            <td>Nabaasa John Paul</td>
+                            <td>PCM/ICT</td>
+                            <td class="score">20</td>
+                        </tr>
+
+                        <tr>
+                            <td>U002</td>
+                            <td>Kangume Nickson</td>
+                            <td>BCM/ICT</td>
+                            <td class="score">19</td>
+                        </tr>
+
+                        <tr>
+                            <td>U003</td>
+                            <td>Kangume Samuel</td>
+                            <td>PCM/ICT</td>
+                            <td class="score">19</td>
+                        </tr>
+
+                        <tr>
+                            <td>U004</td>
+                            <td>Akatwijuka Benjamin</td>
+                            <td>PEM/ICT</td>
+                            <td class="score">19</td>
+                        </tr>
+
+                        <tr>
+                            <td>U005</td>
+                            <td>Kiiza Anthlem</td>
+                            <td>BCM/ICT</td>
+                            <td class="score">19</td>
+                        </tr>
+
+                        <tr>
+                            <td>U006</td>
+                            <td>Abaasa Travor</td>
+                            <td>BCM/ICT</td>
+                            <td class="score">19</td>
+                        </tr>
+
+                        <tr>
+                            <td>U007</td>
+                            <td>Ankunda Ritah</td>
+                            <td>BCM/ICT</td>
+                            <td class="score">18</td>
+                        </tr>
+
+                        <tr>
+                            <td>U008</td>
+                            <td>Tusasiirwe Marvel</td>
+                            <td>MEA/ICT</td>
+                            <td class="score">18</td>
+                        </tr>
+
+                        <tr>
+                            <td>U009</td>
+                            <td>Arinda Shalom</td>
+                            <td>BCM/ICT</td>
+                            <td class="score">18</td>
+                        </tr>
+
+                        <tr>
+                            <td>U010</td>
+                            <td>Arinda Shaaron</td>
+                            <td>HLD/ICT</td>
+                            <td class="score">18</td>
+                        </tr>
+
+                        <tr>
+                            <td>U011</td>
+                            <td>Ahebwa Tarent</td>
+                            <td>BAC/S.MATH</td>
+                            <td class="score">18</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div class="panel-title">
+
+                <h3>Academic Focus</h3>
+
+                <span>2024</span>
+
+            </div>
+
+            <div class="subject-list">
+
+                <div class="subject">
+                    <span class="subject-name">Sciences</span>
+                    <div class="progress"><span style="width:92%"></span></div>
+                </div>
+
+                <div class="subject">
+                    <span class="subject-name">Mathematics</span>
+                    <div class="progress"><span style="width:88%"></span></div>
+                </div>
+
+                <div class="subject">
+                    <span class="subject-name">ICT</span>
+                    <div class="progress"><span style="width:95%"></span></div>
+                </div>
+
+                <div class="subject">
+                    <span class="subject-name">Languages</span>
+                    <div class="progress"><span style="width:84%"></span></div>
+                </div>
+
+                <div class="subject">
+                    <span class="subject-name">Humanities</span>
+                    <div class="progress"><span style="width:87%"></span></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     STUDENT LIFE
+====================================================== -->
+
+<section id="life">
+
+    <div class="section-heading reveal">
+
+        <div class="mini">Student Experience</div>
+
+        <h2>Life Beyond The Classroom.</h2>
+
+        <p>
+            Education is not only about books. Our students
+            balance academics, recreation, teamwork, leadership
+            and personal development.
+        </p>
+
+    </div>
+
+
+    <div class="life-grid reveal">
+
+        <div class="life-card">
+            <div class="life-icon">⚽</div>
+            <h3>Sports</h3>
+            <p>
+                Football and other games help students build
+                teamwork, discipline and healthy competition.
+            </p>
+        </div>
+
+        <div class="life-card">
+            <div class="life-icon">🔬</div>
+            <h3>Innovation</h3>
+            <p>
+                Students are encouraged to experiment, ask
+                questions and turn ideas into practical solutions.
+            </p>
+        </div>
+
+        <div class="life-card">
+            <div class="life-icon">🎭</div>
+            <h3>Creative Arts</h3>
+            <p>
+                Drama, dance and performance provide students
+                with opportunities to discover their talents.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     DAILY SCHEDULE
+====================================================== -->
+
+<section>
+
+    <div class="section-heading reveal">
+
+        <div class="mini">A Day At Ntungamo High</div>
+
+        <h2>Our Daily Rhythm.</h2>
+
+    </div>
+
+
+    <div class="schedule-wrap reveal">
+
+        <table class="schedule">
+
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>5:00 AM</td>
+                    <td>Wake Up</td>
+                </tr>
+
+                <tr>
+                    <td>5:30 AM – 6:50 AM</td>
+                    <td>Morning Preparation</td>
+                </tr>
+
+                <tr>
+                    <td>6:50 AM – 7:40 AM</td>
+                    <td>Breakfast</td>
+                </tr>
+
+                <tr>
+                    <td>7:40 AM – 10:20 AM</td>
+                    <td>Lessons</td>
+                </tr>
+
+                <tr>
+                    <td>10:20 AM – 10:40 AM</td>
+                    <td>Break Time</td>
+                </tr>
+
+                <tr>
+                    <td>10:40 AM – 1:20 PM</td>
+                    <td>Lessons</td>
+                </tr>
+
+                <tr>
+                    <td>1:20 PM – 2:20 PM</td>
+                    <td>Lunch Break</td>
+                </tr>
+
+                <tr>
+                    <td>2:20 PM – 5:00 PM</td>
+                    <td>Lessons</td>
+                </tr>
+
+                <tr>
+                    <td>5:00 PM – 6:00 PM</td>
+                    <td>Games Time</td>
+                </tr>
+
+                <tr>
+                    <td>6:00 PM – 7:30 PM</td>
+                    <td>Supper</td>
+                </tr>
+
+                <tr>
+                    <td>7:30 PM – 10:00 PM</td>
+                    <td>Night Preparation</td>
+                </tr>
+
+                <tr>
+                    <td>10:00 PM – 10:30 PM</td>
+                    <td>Night Prayers</td>
+                </tr>
+
+                <tr>
+                    <td>10:30 PM – 5:00 AM</td>
+                    <td>Rest</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     UPDATES
+====================================================== -->
+
+<section id="updates">
+
+    <div class="section-heading reveal">
+
+        <div class="mini">What's Happening</div>
+
+        <h2>School Updates.</h2>
+
+        <p>
+            Stay connected with activities and opportunities
+            happening around our school community.
+        </p>
+
+    </div>
+
+
+    <div class="updates reveal">
+
+        <div class="update-card">
+
+            <div class="update-date">SCHOOL NEWS</div>
+
+            <h3>Welcome To Our School</h3>
+
+            <p>
+                We welcome students, parents and visitors to
+                the official Ntungamo High School website.
+            </p>
+
+        </div>
+
+
+        <div class="update-card">
+
+            <div class="update-date">ACADEMICS</div>
+
+            <h3>Academic Excellence</h3>
+
+            <p>
+                Students continue to work together through
+                discussions, revision and collaborative learning.
+            </p>
+
+        </div>
+
+
+        <div class="update-card">
+
+            <div class="update-date">STUDENT LIFE</div>
+
+            <h3>Discover Your Talent</h3>
+
+            <p>
+                Students are encouraged to participate in clubs,
+                sports, drama, debate and science activities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     CLUBS
+====================================================== -->
+
+<section id="clubs">
+
+    <div class="section-heading reveal">
+
+        <div class="mini">Student Clubs</div>
+
+        <h2>Find Your Community.</h2>
+
+        <p>
+            With more than ten clubs and activities,
+            students have many opportunities to discover
+            their interests and talents.
+        </p>
+
+    </div>
+
+
+    <div class="clubs reveal">
+
+
+        <div class="club">
+
+            <img src="images/cp.jpeg" alt="Science Club">
+
+            <div class="club-body">
+
+                <h3>🔬 Science Club</h3>
+
+                <p>
+                    The Science Club encourages students to
+                    experiment, innovate and share brilliant ideas.
+                    Under the guidance of the club patron,
+                    Mr. Matayo, students explore science and ICT
+                    while developing practical skills.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="club">
+
+            <img src="images/cp.jpeg" alt="Drama Club">
+
+            <div class="club-body">
+
+                <h3>🎭 Drama Club</h3>
+
+                <p>
+                    Drama and dance provide a space where students
+                    can express themselves, develop confidence,
+                    discover their talents and enjoy time together.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="club">
+
+            <img src="images/cp.jpeg" alt="Debate Club">
+
+            <div class="club-body">
+
+                <h3>🎤 Debate Club</h3>
+
+                <p>
+                    Debate helps students develop communication,
+                    confidence, critical thinking and the ability
+                    to express ideas clearly while respecting
+                    different opinions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     MISSION
+====================================================== -->
+
+<section class="mission">
+
+    <div class="section-heading">
+
+        <div class="mini">Our Philosophy</div>
+
+    </div>
+
+    <div class="quote">
+
+        "Aiming at academic excellence,
+        promoting <span>every kind of student</span>,
+        and keeping them closer to God."
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="logo-area">
+
+                <img src="images/logo.jpeg"
+                     alt="Ntungamo High School Logo">
+
+                <div class="logo-text">
+                    NTUNGAMO HIGH
+                    <span>EXCELLENCE • FAITH • FUTURE</span>
+                </div>
+
+            </div>
+
+            <p style="margin-top:20px">
+                Building confident, knowledgeable and
+                responsible young people ready for tomorrow.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Explore</h3>
+
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#academics">Academics</a>
+            <a href="#life">Student Life</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Community</h3>
+
+            <a href="#updates">Updates</a>
+            <a href="#clubs">Clubs & Activities</a>
+            <a href="#" onclick="openModal()">Contact School</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Ntungamo High School.
+        Designed with purpose, creativity and innovation.
+
+    </div>
+
+</footer>
+
+
+<!-- ======================================================
+     CONTACT MODAL
+====================================================== -->
+
+<div class="modal" id="contactModal">
+
+    <div class="modal-box">
+
+        <span class="close" onclick="closeModal()">×</span>
+
+        <h2>Contact Ntungamo High</h2>
+
+        <p>
+            Have a question? Send us a message.
+        </p>
+
+        <form onsubmit="sendMessage(event)">
+
+            <div class="form-group">
+                <input type="text"
+                       placeholder="Your Name"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <input type="email"
+                       placeholder="Your Email"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <textarea placeholder="Your Message"
+                          required></textarea>
+            </div>
+
+            <button class="btn btn-primary"
+                    type="submit"
+                    style="border:none;cursor:pointer">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     BACK TO TOP
+====================================================== -->
+
+<button class="top-btn"
+        id="topBtn"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("show");
+
+}
+
+
+/* Close mobile menu when clicking a link */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click",function(){
+
+        document
+            .getElementById("navLinks")
+            .classList.remove("show");
+
+    });
+
+});
+
+
+/* =========================================================
+   CONTACT MODAL
+========================================================= */
+
+function openModal(){
+
+    document.getElementById("contactModal").style.display="flex";
+
+}
+
+function closeModal(){
+
+    document.getElementById("contactModal").style.display="none";
+
+}
+
+window.addEventListener("click",function(event){
+
+    const modal=document.getElementById("contactModal");
+
+    if(event.target===modal){
+
+        closeModal();
+
+    }
+
+});
+
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    alert(
+        "Thank you! Your message has been received. " +
+        "The school can connect this form to an email or database later."
+    );
+
+    event.target.reset();
+
+    closeModal();
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function revealElements(){
+
+    const elements=document.querySelectorAll(".reveal");
+
+    elements.forEach(element => {
+
+        const position=
+            element.getBoundingClientRect().top;
+
+        const windowHeight=
+            window.innerHeight;
+
+        if(position < windowHeight - 80){
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",revealElements);
+
+window.addEventListener("load",revealElements);
+
+
+/* =========================================================
+   BACK TO TOP BUTTON
+========================================================= */
+
+window.addEventListener("scroll",function(){
+
+    const button=document.getElementById("topBtn");
+
+    if(window.scrollY > 500){
+
+        button.style.display="block";
+
+    }else{
+
+        button.style.display="none";
+
+    }
+
+});
+
+
+/* =========================================================
+   NAVBAR EFFECT
+========================================================= */
+
+window.addEventListener("scroll",function(){
+
+    const navbar=document.querySelector(".navbar");
+
+    if(window.scrollY > 50){
+
+        navbar.style.background="rgba(2,15,10,.94)";
+
+    }else{
+
+        navbar.style.background="rgba(3,17,12,.75)";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
